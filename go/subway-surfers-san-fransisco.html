@@ -1,45 +1,27 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Horse | Definition, Breeds, Pictures, Evolution, & Facts | Britannica</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="special.css">
-    <link rel="icon" type="image/x-icon" href="https://www.britannica.com/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bungee&family=Comfortaa:wght@400;600&family=Fredoka+One&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+
+<script src="/js/all.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The World's Hardest Game</title>
+    <style>html{background-color:#000;}</style>
   </head>
   <body>
-    <div class="header">
-      <h1>Unblocked Games</h1>
-    </div>
-    <div class="game-container">
-      <iframe class="game-iframe" id="game-area" src="https://h5store688.github.io/g8/subway-surfers-san-fransisco/" width="900" height="600" scrolling="none" frameborder="0" allowfullscreen></iframe>
-      <h4>Subway Surfers...</h4>
-      <div class="fullscreen-btn-container">
-        <button href="#" onclick="open_fullscreen()" class="btn btn-capsule">
-          <i class="bi bi-arrows-fullscreen b-icon"></i> Fullscreen
-        </button>
-      </div>
-    </div>
+    <div id="ruffle" width="100%" height="100%"></div>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <script>
-      document.addEventListener('keydown', function(event) {
-         if (event.key === 'f' || event.key === 'F') {
-            open_fullscreen();
-         }
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("ruffle");
+        player.id = "player";
+        player.style.width = "100%";
+        player.style.height = "100%";
+        container.appendChild(player);
+        player.load("hardestgame.swf");
       });
-      
-      function open_fullscreen() {
-        var elem = document.getElementById('game-area');
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { /* Firefox */
-          elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-          elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE/Edge */
-          elem.msRequestFullscreen();
-        }
-      }
     </script>
   </body>
 </html>
