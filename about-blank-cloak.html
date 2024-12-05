@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Horse | Definition, Breeds, Pictures, Evolution, & Facts | Britannica</title>
+    <link rel="icon" type="image/x-icon" href="https://www.britannica.com/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="special.css">
+  </head>
+  <body>
+    <label for="urlInput">Enter URL to cloak: </label>
+    <input type="text" id="urlInput" placeholder="Enter the URL here">
+    <button onclick="cloakSite()">Go!</button>
+
+    <script>
+    function cloakSite() {
+        // Get the value of the input field
+        var url = document.getElementById('urlInput').value;
+
+        // If the input is empty or invalid, alert the user
+        if (!url || !isValidUrl(url)) {
+            alert("Please enter a valid URL. (Hint: URL must start with 'https://'.)");
+            return;
+        }
+
+        if (url === "https://pornhub.com" || url === "https://xxxvideos.com" || url === "https://google.com" || url === "https://youtube.com" || url === "https://YouTube.com" || url === "https://Google.com") {
+            alert("!The developer has blocked these websites, either because they don't work, or because you don't need to use them!");
+            return;
+        }
+
+        // Open a new window
+        var win = window.open();
+
+        // Create an iframe element
+        var iframe = win.document.createElement('iframe');
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        iframe.style.borderWidth = "0";
+        iframe.src = url;
+
+        // Append iframe to the new window's body
+        win.document.body.appendChild(iframe);
+    }
+
+    // Simple URL validation function
+    function isValidUrl(url) {
+        try {
+            new URL(url);
+            return true;
+        } catch (_) {
+            return false;
+        }
+    }
+    </script>
+  </body>
+</html>
