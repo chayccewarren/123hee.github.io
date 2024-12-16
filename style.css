@@ -176,7 +176,13 @@ footer {
 .search-btn {
   position: absolute;
   display: flex;
-  left: 1300px;
+  left: 1220px;
+}
+
+.cloak-btn {
+  position: absolute;
+  display: flex;
+  left: 1180px;
 }
 
 .logo {
@@ -192,6 +198,9 @@ footer {
 .main-title {
   display: flex;
   gap: 20px;
+/* Color day */
+  color: purple;
+/* Color day */
 }
 
 .dropbtn {
